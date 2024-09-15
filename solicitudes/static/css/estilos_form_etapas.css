@@ -1,0 +1,26 @@
+.formulario_salto_etapa{
+    /*background-color: red;*/
+    display: grid;
+    width:50%;
+    gap:1rem;
+}
+
+@media (max-width: 900px) {
+
+    /* CSS para tabletas y dispositivos medianos */
+    .login_division_derecha {
+        background-color: green;
+    }
+
+    .formulario_salto_etapa{
+        /*background-color: red;*/
+        display: grid;
+        width:100%;
+        gap:1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* CSS para dispositivos móviles */
+
+}

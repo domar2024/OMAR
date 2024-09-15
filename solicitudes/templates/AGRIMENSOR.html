@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_contenedor_form_elementos.css' %}">
+{% endblock %}
+
+{% block title %}
+Agrimensores
+{% endblock %}
+
+
+{% block content %}
+<h1>Agrimensor</h1>
+
+{% include 'campo_buscador_elemento.html'%}
+
+<div class="tabla_elementos_form">
+    <div class="tabla_elementos" id="agrimensores-table"></div>
+    <form id="agrimensores-form" class="form">
+        <h3 class="titulo_tipo_campos_texto">Datos generales</h3>
+        <div class="campo_texto">
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombres" required>
+        </div>
+        <div class="campo_texto">
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required>
+        </div>
+        <div class="campo_texto">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="">Seleccione un sexo</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="nacionalidad">Nacionalidad:</label>
+            <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad" required>
+        </div>
+        <div class="campo_texto">
+            <label for="cedula">Cédula o Pasaporte:</label>
+            <input type="text" id="cedula" name="cedula" placeholder="Cedula o Pasaporte" required>
+        </div>
+        <div class="campo_texto">
+            <label for="estadoCivil">Estado Civil:</label>
+            <input type="text" id="estadoCivil" name="estadoCivil" placeholder="Estado Civil" required>
+        </div>
+        <div class="campo_texto">
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="profesion" placeholder="Profesion" required>
+        </div>
+        <div class="campo_texto">
+            <label for="codia">CODIA Nro:</label>
+            <input type="text" id="codia" name="codia" placeholder="CODIA Nro" required>
+        </div>
+        <div class="campo_texto">
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" name="celular" placeholder="Celular" required>
+        </div>
+        <div class="campo_texto">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" placeholder="Correo" required>
+        </div>
+
+        <h3 class="titulo_tipo_campos_texto">Dirección</h3>
+        <div class="campo_texto">
+            <label for="pais">País:</label>
+            <select id="pais" required>
+                <option value="">Seleccione un país</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" required>
+                <option value="">Seleccione una provincia</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="municipio">Municipio:</label>
+            <select id="municipio" required>
+                <option value="">Seleccione un municipio</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="idSector">Sector:</label>
+            <select id="idSector" name="idSector" required>
+                <option value="">Seleccione un sector</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle" placeholder="Calle" required>
+        </div>
+
+        <input style="display:none" type="number" id="estatus" placeholder="Estatus" value="1" required>
+
+        <div class="contenedor_botones">
+            <button type="button" id="delete-btn" class="boton_normal"
+                style="background-color: var(--color_cafe); display:none">Eliminar</button>
+            <button type="submit" class="boton_normal" style="background-color: var(--color_azul);">Guardar</button>
+        </div>
+        <div id="error-message" style="color: red;"></div>
+        <div id="success-message" style="color: green;"></div>
+    </form>
+</div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Agrimensor</h3>
+        <p>¿Estás seguro que deseas eliminar <span id="span-resto-mensaje-confirmacion"> </span>?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/crear_agrimensor.js' %}"></script>
+{% endblock %}

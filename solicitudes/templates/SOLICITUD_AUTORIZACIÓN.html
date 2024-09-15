@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/solicitud_autorizacion.css' %}">
+{% endblock %}
+
+{% block title %}
+Solicitud Autorización
+{% endblock %}
+
+
+{% block content %}
+<h1>Solicitud de Autorización</h1>
+
+<form class="contenedor_formulario_solicitud_autorizacion" id="solicitud-form">
+
+    <div class="campo_texto grid_span_todo">
+        <label for="">Agrimensor:</label>
+        <select id="idAgrimensor" name="idAgrimensor" required>
+            <option value="">Seleccione un Agrimensor</option>
+        </select>
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Cliente:</label>
+        <select id="idCliente01" name="idCliente01" required>
+            <option value="">Seleccione un cliente</option>
+        </select>
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <input type="checkbox" name="option1" value="Option 1" id="idCheckboxConyugue">
+        <label for="">Conyugue:</label>
+        <select id="idCliente02" name="idCliente02" disabled required>
+            <option value="">Seleccione un cliente</option>
+        </select>
+    </div>
+
+    <div class="campo_texto grid_span_todo">
+        <label for="">Notario:</label>
+        <select id="idNotario" name="idNotario" required>
+            <option value="">Seleccione un notario</option>
+        </select>
+    </div>
+
+    <h3>Datos Técnicos</h3>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Actuación Técnica:</label>
+        <select id="actuacionTecnica" required>
+            <option value=" ">Selecciona una Actuación Técnica</option>
+            <option value="Deslinde">Deslinde</option>
+            <option value="Regularización Parcelaria">Regularización Parcelaria</option>
+            <option value="Subdivisión">Subdivisión</option>
+            <option value="Actualización de Mensura">Actualización de Mensura</option>
+            <option value="Saneamiento">Saneamiento</option>
+            <option value="Refundición">Refundición</option>
+            <option value="Subdivisión para partición">Subdivisión para partición</option>
+        </select>
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Parcela:</label>
+        <input type="text" id="parcela" name="parcela" placeholder="Parcela" required>
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Distrito Catastral:</label>
+        <input type="text" id="distritoCatrastal" name="distritoCatrastal" placeholder="Distrito Catastral" required>
+    </div>
+
+    <h3>Datos del inmueble</h3>
+    <div class="campo_texto grid_span_2">
+        <label for="pais">País:</label>
+        <select id="pais" required>
+            <option value="">Seleccione un país</option>
+        </select>
+    </div>
+    <div class="campo_texto grid_span_2">
+        <label for="provincia">Provincia:</label>
+        <select id="provincia" required>
+            <option value="">Seleccione una provincia</option>
+        </select>
+    </div>
+    <div class="campo_texto grid_span_2">
+        <label for="municipio">Municipio:</label>
+        <select id="municipio" required>
+            <option value="">Seleccione un municipio</option>
+        </select>
+    </div>
+    <div class="campo_texto grid_span_2">
+        <label for="">Sector:</label>
+        <select id="idSector" required>
+            <option value="">Seleccione un sector</option>
+        </select>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Calle:</label>
+        <input type="text" id="calle" name="calle" placeholder="Calle" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Area(m2):</label>
+        <input type="text" id="area" name="area" placeholder="Area(m2)" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Coordenadas X (UTM):</label>
+        <input type="text" id="coordX" name="coordX" placeholder="Coordenadas X" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Coordenadas Y (UTM):</label>
+        <input type="text" id="coordY" name="coordY" placeholder="Coordenadas Y" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Coordenadas Latitud (Grado Decimal):</label>
+        <input type="text" id="coordLatitud" name="coordLatitud" placeholder="Coordenadas Latitud" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="">Coordenadas Longitud (Grado Decimal):</label>
+        <input type="text" id="coordLongitud" name="coordLongitud" placeholder="Coordenadas Longitud" required>
+    </div>
+
+    <div class="campo_texto grid_span_2">
+        <label for="derecho-sustentado">Derecho Sustentado:</label>
+        <select id="derecho-sustentado" required></select>
+    </div>
+
+    <h3>Datos Generales</h3>
+    <div class="campo_texto grid_span_3">
+        <label for="">Fecha de Documento de Derecho:</label>
+        <input type="date" id="fechaContratoVenta" name="fechaContratoVenta" required>
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Departamento Oficina:</label>
+        <select id="idDepartamentoOficina" name="idDepartamentoOficina" required></select>
+    </div>
+
+    <div class="campo_texto grid_span_2" style="display: none;">
+        <label for="">Número de Expediente:</label>
+        <input type="text" id="nroExpediente" name="nroExpediente" value=0 placeholder="Número de Expediente">
+    </div>
+
+    <div class="campo_texto grid_span_3">
+        <label for="">Fecha de Solicitud:</label>
+        <input type="date" id="fechaAutorizacion" name="fechaAutorizacion" required>
+    </div>
+
+    <input type="hidden" id="estatus" name="estatus" value="1">
+
+    <button type="submit" class="boton_normal" style="background-color: var(--color_azul);">Guardar</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/solicitud_autorizacion.js' %}"></script>
+{% endblock %}

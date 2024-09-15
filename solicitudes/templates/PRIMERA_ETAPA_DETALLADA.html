@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/ver_etapa.css' %}">
+{% endblock %}
+
+{% block title %}
+Solicitud Detallada
+{% endblock %}
+
+
+{% block content %}
+<h1>Solicitud Detallada</h1>
+
+<div class="contenedor_datos_etapa" id="solicitud-detalle">
+
+</div>
+<div class="botones">
+    <div class="grid_span_2">
+        <a id="download_link" type="submit" class="boton_normal" style="background-color: var(--color_cafe)">Descargar Documento</a>
+        <input type="checkbox" name="" id="check-solicitud">
+    </div>
+    <a id="next-step-link" class="boton_normal">Siguiente Etapa</a>
+    <button id="delete_etapa_desplegar" class="boton_normal" style="background-color: var(--color_cafe)">Eliminar</button>
+</div>
+
+<form class="campo_num_expediente" id="expedienteForm">
+    <label for="edit-num-expediente">Editar Nro Expediente:</label>
+    <input type="text" id="edit-num-expediente" name="edit-num-expediente" placeholder="Nro Expediente">
+    <button type="submit" class="boton_normal" style="background-color: var(--color_grises_1);">Actualizar</button>
+</form>
+
+
+<div id="error-message" style="color: red;"></div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Solicitud</h3>
+        <p>¿Estás seguro que deseas eliminar la solicitud?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/primera_etapa_detallada_edit.js' %}"></script>
+{% endblock %}

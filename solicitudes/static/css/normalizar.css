@@ -1,0 +1,117 @@
+@import url('satoshi.css');
+
+/*
+font-family: Satoshi-Light;
+font-family: Satoshi-LightItalic;
+font-family: Satoshi-Regular;
+font-family: Satoshi-Italic;
+font-family: Satoshi-Medium;
+font-family: Satoshi-MediumItalic;
+font-family: Satoshi-Bold;
+font-family: Satoshi-BoldItalic;
+font-family: Satoshi-Black;
+font-family: Satoshi-BlackItalic;
+font-family: Satoshi-Variable;
+font-family: Satoshi-VariableItalic;
+*/
+
+:root {
+    --fuente_gruesa_2: Satoshi-Black;
+    --fuente_gruesa_1: Satoshi-Bold;
+    --fuente_media: Satoshi-Medium;
+    --fuente_delgado: Satoshi-Regular;
+
+    --fuente_tamanio_titulo_1: 28px;
+    --fuente_tamanio_titulo_2: 22px;
+    --fuente_tamanio_titulo_3: 18px;
+    --fuente_tamanio_titulo_4: 15px;
+
+    --color_blanco_0: #FFFFFF;
+    --color_blanco_1: #ECECEC;
+    --color_blanco_2: #D9D9D9;
+    --color_blanco_3: #A9B1B7;
+    --color_cafe: #663E2D;
+    --color_ladrillo: #603E3E;
+    --color_azul: #3E5060;
+    --color_dorado_claro: #E0CDA8;
+
+    --color_grises_2: #1C1C1C;
+    --color_grises_1: #686868;
+    --color_grises_0: #B3B3B3;
+    --color_grises_-1: #DDDDDD;
+    --color_grises_-2: #F7F7F7;
+}
+
+html {
+    font-size: var(--fuente_tamanio_titulo_4);
+}
+
+input[type="text"] {
+    /* Eliminar bordes y fondo */
+    border: none;
+    background: none;
+
+    /* Eliminar padding y margin */
+    padding: 0;
+    margin: 0;
+
+    /* Eliminar sombras */
+    box-shadow: none;
+
+    /* Restablecer estilos de fuente */
+    font: inherit;
+    color: inherit;
+
+    /* Eliminar el borde de enfoque en navegadores (opcional) */
+    outline: none;
+}
+
+select {
+    position: relative;
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    appearance:none;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+    outline:none;
+}
+
+select:focus {
+    outline: none;
+}
+
+select:active {
+    outline: none;
+}
+
+body {
+    background-color: #B3B3B3;
+}
+
+* {
+    margin: none;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente_media);
+    font-size: var(--fuente_tamanio_titulo_4);
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+h1{
+    margin:none !important;
+}
+
+p{
+    margin: none;
+}

@@ -1,0 +1,28 @@
+{% load static %}
+<div class="barra_lateral" id="barra_lateral">
+        
+    <button id="logout">Logout</button>
+    <img src="{% static 'Logo_blanco_texto.png' %}" alt="">
+    <h2>Proyecto</h2>
+    <a href="{% url 'primera_etapa' %}" id="enlace_nav_primera_etapa">Solicitudes</a>
+    <a href="{% url 'segunda_etapa' %}" id="enlace_nav_segunda_etapa">Publicidad</a>
+    <a href="{% url 'tercera_etapa' %}" id="enlace_nav_tercera_etapa">Expediente</a>
+    <a href="{% url 'prorroga' %}" id="enlace_nav_prorroga">Prórroga</a>
+
+    <h2>Configuraciones</h2>
+    <a href="{% url 'agrimensor' %}"   id="enlace_nav_agrimensor">   Agrimensor</a>
+    <a href="{% url 'cliente' %}"      id="enlace_nav_cliente">      Cliente</a>
+    <a href="{% url 'notario' %}"      id="enlace_nav_notario">      Notario</a>
+    <a href="{% url 'departamento' %}" id="enlace_nav_departamento"> Departamento</a>
+    <a href="{% url 'sector' %}"       id="enlace_nav_sector">       Domicilios</a>
+
+    <a href="{% url 'usuario' %}" class="al_final" id="crud_usuarios_btn">Usuario</a>
+
+</div>
+<button class="uña_barra_lateral" id="uña_barra_lateral">
+    <span class="material-symbols-outlined" style="font-weight:1000">
+        arrow_forward_ios
+    </span>
+</button>
+
+<script src="{% static 'js/script_navegador_derecho.js' %}"></script>

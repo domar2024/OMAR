@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/ver_etapa.css' %}">
+{% endblock %}
+
+{% block title %}
+Publicidad Detallada
+{% endblock %}
+
+
+{% block content %}
+<h1>Publicidad Detallada</h1>
+
+<div class="contenedor_datos_etapa" id="avisomensura-detalle">
+    <!-- Aquí se cargarán los detalles del avisomensura -->
+</div>
+
+<div id="error-message" style="color: red;"></div>
+<div class="botones">
+    <div class="grid_span_2">
+        <a id="download_link_mensura" type="submit" class="boton_normal" style="background-color: var(--color_cafe)">Aviso Mensura</a>
+        <input type="checkbox" name="" id="check-mensura">
+    </div>
+
+    <div class="grid_span_2">
+        <a id="download_link_periodico" type="submit" class="boton_normal" style="background-color: var(--color_cafe)">Aviso Periódico</a>
+        <input type="checkbox" name="" id="check-periodico">
+    </div>
+
+    <div class="grid_span_2">
+        <a id="download_link_colindante" type="submit" class="boton_normal" style="background-color: var(--color_cafe)">Aviso Colindante</a>
+        <input type="checkbox" name="" id="check-colindante">
+    </div>
+
+    <a id="next-step-link" class="boton_normal" style="background-color: var(--color_azul)" href="#">Siguiente Etapa</a>
+    <button id="delete_etapa_desplegar" class="boton_normal" style="background-color: var(--color_cafe)">Eliminar</button>
+</div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Publicidad</h3>
+        <p>¿Estás seguro que deseas eliminar la publicidad?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/segunda_etapa_detallada_edit.js' %}"></script>
+{% endblock %}

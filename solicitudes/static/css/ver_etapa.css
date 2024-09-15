@@ -1,0 +1,197 @@
+:root {
+    --fuente_gruesa_2: Satoshi-Black;
+    --fuente_gruesa_1: Satoshi-Bold;
+    --fuente_media: Satoshi-Medium;
+    --fuente_delgado: Satoshi-Regular;
+
+    --fuente_tamanio_titulo_1: 28px;
+    --fuente_tamanio_titulo_2: 22px;
+    --fuente_tamanio_titulo_3: 18px;
+    --fuente_tamanio_titulo_4: 15px;
+
+    --color_blanco_0: #FFFFFF;
+    --color_blanco_1: #ECECEC;
+    --color_blanco_2: #D9D9D9;
+    --color_blanco_3: #A9B1B7;
+    --color_cafe: #663E2D;
+    --color_ladrillo: #603E3E;
+    --color_azul: #3E5060;
+    --color_dorado_claro: #E0CDA8;
+
+    --color_grises_2: #1C1C1C;
+    --color_grises_1: #686868;
+    --color_grises_0: #B3B3B3;
+    --color_grises_-1: #DDDDDD;
+    --color_grises_-2: #F7F7F7;
+}
+
+
+.contenedor_datos_etapa{
+    /*background-color: green;*/
+    /*height: calc(100% - 2rem - 1rem);*/
+    box-sizing: border-box;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-content: start;
+    width: 100%;
+    column-gap: 0.2rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.contenedor_datos_etapa  h3{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    font-size: var(--fuente_tamanio_titulo_3);
+    color:rgb(31, 31, 31);
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}.contenedor_datos_etapa  h3:first-of-type{
+    margin-top: 0;
+}
+
+
+.contenedor_datos_etapa  p{
+    color:var(--color_grises_2);
+    margin:0.5rem 0;
+}
+
+.contenedor_prueba_2{
+    /*background-color: blue;*/
+    width:300px;
+}
+
+.clave_valor_campo{
+    /*background-color: red;*/
+    display: flex;
+
+    gap:5px;
+    color:var(--color_grises_1);
+    width:100%;
+    margin-bottom: 0.6rem;
+}
+
+.clave_valor_campo > label{
+    font-family: var(--fuente_gruesa_1);
+    margin: 0;
+}
+
+.clave_valor_campo > p{
+    font-family: var(--fuente_media);
+    height:calc(2rem + 5px);
+    margin: 0;
+    align-items: center;
+    display: flex;
+}
+
+.contenedor_datos_etapa > button:nth-of-type(1){
+    grid-column: -3;
+}
+
+.contenedor_datos_etapa > button:nth-of-type(2){
+    grid-column: -2;
+}
+
+.num_expediente{
+    margin-top: 1rem;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.botones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.botones > div{
+    display: flex;
+    width:100%;
+    
+    align-items: center;
+}
+
+.botones > div > a{
+    width:100%;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.botones > a{
+    text-align: center;
+}
+
+.botones  input{
+    height: 100%;
+    width: 20px;
+    
+}
+
+.campo_num_expediente{
+    display: grid;
+    grid-template-columns: 160px 300px 120px auto;
+    align-items: center;
+    margin-top: 1rem;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.campo_num_expediente > input{
+    background-color: white;
+    height: 2rem;
+}
+
+.campo_num_expediente > label{
+    font-family: var(--fuente_gruesa_1);
+    color:var(--color_grises_2)
+}
+
+
+@media (max-width: 900px) {
+
+    /* CSS para tabletas y dispositivos medianos */
+    .login_division_derecha {
+        background-color: green;
+    }
+
+    .contenedor_datos_etapa{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .campo_texto_con_boton{
+        padding-top: 1rem;
+    }
+
+    .num_expediente{
+        flex-direction: column;
+    }
+    
+    .botones{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .campo_num_expediente{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campo_num_expediente > label{
+        grid-column: span 2;
+    }
+}
+
+
+ 
+@media (max-width: 600px) {
+    /* CSS para dispositivos móviles */
+
+    .contenedor_datos_etapa{
+        grid-template-columns: 1fr;
+    }
+
+}

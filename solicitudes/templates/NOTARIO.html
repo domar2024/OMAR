@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_contenedor_form_elementos.css' %}">
+{% endblock %}
+
+{% block title %}
+Notarios
+{% endblock %}
+
+
+{% block content %}
+<h1>Notario</h1>
+
+{% include 'campo_buscador_elemento.html'%}
+
+<div class="tabla_elementos_form">
+    <table class="tabla_elementos" id="notarios-table">
+    </table>
+    <form id="notarios-form" class="form">
+        <h3 class="titulo_tipo_campos_texto">Datos generales</h3>
+        <div class="campo_texto">
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombres" required>
+        </div>
+        <div class="campo_texto">
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required>
+        </div>
+        <div class="campo_texto">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="">Seleccione un sexo</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="pais">País:</label>
+            <select id="pais" required>
+                <option value="">Seleccione un país</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" required>
+                <option value="">Seleccione una provincia</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="municipio">Municipio:</label>
+            <select id="municipio" required>
+                <option value="">Seleccione un municipio</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="idSector">Sector:</label>
+            <select id="idSector" name="idSector" placeholder="Sector" required>
+                <option value="">Seleccione un sector</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="nroColegiatura">Nro Colegiatura:</label>
+            <input type="text" id="nroColegiatura" name="nroColegiatura" placeholder="Nro Colegiatura" required>
+        </div>
+        <input style="display:none" type="number" id="estatus" name="estatus" value="1" required>
+        <div class="contenedor_botones">
+            <button type="button" id="delete-btn" class="boton_normal"
+                style="background-color: var(--color_cafe); display:none">Eliminar</button>
+            <button type="submit" class="boton_normal" style="background-color: var(--color_azul);">Guardar</button>
+            <div id="error-message" style="color: red;"></div>
+            <div id="success-message" style="color: green;"></div>
+        </div>
+
+    </form>
+</div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Notario</h3>
+        <p>¿Estás seguro que deseas eliminar <span id="span-resto-mensaje-confirmacion"> </span>?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/crear_notario.js' %}"></script>
+{% endblock %}

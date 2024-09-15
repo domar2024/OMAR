@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/ver_etapa.css' %}">
+{% endblock %}
+
+{% block title %}
+Expediente Detallado
+{% endblock %}
+
+
+{% block content %}
+<h1>Expediente Detallado</h1>
+
+<div class="contenedor_datos_etapa" id="informe-tecnica-detalle">
+    <!-- Aquí se cargarán los detalles de la ficha tecnica -->
+</div>
+
+<div id="error-message" style="color: red;"></div>
+<div class="botones">
+    <div class="grid_span_2">
+        <a id="download_link_conformidad" type="submit" class="boton_normal" style="background-color: var(--color_azul)">Carta Conformidad</a>
+        <input type="checkbox" name="" id="check-carta">
+    </div>
+
+    <div class="grid_span_2">
+        <a id="download_link_declaracion" type="submit" class="boton_normal" style="background-color: var(--color_azul)">Declaración Posesión</a>
+        <input type="checkbox" name="" id="check-declaracion">
+    </div>
+
+    <div class="grid_span_2">
+        <a id="download_link_informe" type="submit" class="boton_normal" style="background-color: var(--color_azul)">Informe Técnico</a>
+        <input type="checkbox" name="" id="check-informe">
+    </div>
+    <a id="download_link_acta" type="submit" class="boton_normal" style="background-color: green">Acta de Hitos</a>
+    <button id="delete_etapa_desplegar" class="boton_normal" style="background-color: var(--color_cafe)">Eliminar</button>
+</div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Expediente</h3>
+        <p>¿Estás seguro que deseas eliminar la expediente?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/tercera_etapa_detallada_edit.js' %}"></script>
+{% endblock %}

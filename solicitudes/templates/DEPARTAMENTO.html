@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_contenedor_form_elementos.css' %}">
+{% endblock %}
+
+{% block title %}
+Departamentos
+{% endblock %}
+
+
+{% block content %}
+<h1>Departamentos</h1>
+
+{% include 'campo_buscador_elemento.html'%}
+
+<div class="tabla_elementos_form">
+
+    <div class="tabla_elementos" id="departamentos-table"></div>
+    <form id="departamentos-form" class="form">
+        <h3 class="titulo_tipo_campos_texto">Información del Departamento</h3>
+        <div class="campo_texto">
+            <label for="">Departamento/Oficina:</label>
+            <input type="text" id="departamentoOficina" placeholder="Departamento/Oficina" required>
+        </div>
+        <div class="campo_texto">
+            <label for="">Encargado:</label>
+            <input type="text" id="encargado" placeholder="Encargado" required>
+        </div>
+        <div class="campo_texto">
+            <label for="pais">País:</label>
+            <select id="pais" required>
+                <option value="">Seleccione un país</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" required>
+                <option value="">Seleccione una provincia</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="municipio">Municipio:</label>
+            <select id="municipio" required>
+                <option value="">Seleccione un municipio</option>
+            </select>
+        </div>
+        <div class="campo_texto">
+            <label for="">Sector:</label>
+            <select id="idSector" required>
+                <option value="">Seleccione un sector</option>
+            </select>
+        </div>
+        <input style="display:none" type="number" id="estatus" placeholder="Estatus" value="1" required>
+        <div class="contenedor_botones">
+            <button type="button" id="delete-btn" class="boton_normal"
+                style="background-color: var(--color_cafe); display:none">Eliminar</button>
+            <button type="submit" class="boton_normal" style="background-color: var(--color_azul);">Guardar</button>
+        </div>
+        <div id="error-message" style="color: red;"></div>
+        <div id="success-message" style="color: green;"></div>
+    </form>
+</div>
+
+<div class="ventana_confirmar" id="ventana_confirmar" style="display: none;">
+    <div class="contenedor_ventana">
+        <h3>Eliminar Cliente</h3>
+        <p>¿Estás seguro que deseas eliminar <span id="span-resto-mensaje-confirmacion"> </span>?</p> 
+        <div>
+            <button class="boton_normal" style="background-color:var(--color_azul)" id="boton-salir-ventana">No</button>
+            <button class="boton_normal" style="background-color:#671212" id="delete-button-total">Sí, eliminar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/crear_departamento.js' %}"></script>
+{% endblock %}

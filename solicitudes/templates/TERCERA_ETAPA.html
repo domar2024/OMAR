@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_etapas.css' %}">
+{% endblock %}
+
+{% block title %}
+Expediente
+{% endblock %}
+
+
+{% block content %}
+<h1>Expediente</h1>
+
+<div class="contenedor_buscador_crear">
+    <div class="buscador_elemento">
+        <div class="campo_texto">
+            <label for="search-input">Nro. Expediente:</label>
+            <input type="text" id="search-input">
+        </div>
+    </div>
+</div>
+
+<div class="contenedor_lista_proyectos" id="informes-tecnicos-table">
+    <!-- Aquí se cargarán los informes técnicos -->
+</div>
+<div id="error-message" style="color: red;"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/tercera_etapa.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_etapas.css' %}">
+{% endblock %}
+
+{% block title %}
+Solicitudes
+{% endblock %}
+
+
+{% block content %}
+<h1>Solicitudes</h1>
+
+<div class="contenedor_buscador_crear">
+    <div class="buscador_elemento">
+        <div class="campo_texto">
+            <label for="search-input">Nombre Cliente:</label>
+            <input type="text" id="search-input">
+        </div>
+    </div>
+    <a href="{% url 'solicitud_autorizacion' %}" class="boton_normal">Crear</a>
+</div>
+
+<div class="contenedor_lista_proyectos" id="solicitudes-table">
+
+</div>
+<div id="error-message" style="color: red;"></div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/primera_etapa.js' %}"></script>
+{% endblock %}

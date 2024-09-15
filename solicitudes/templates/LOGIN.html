@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/normalizar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_generales.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_login.css' %}">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="login_division_izquierda"></div>
+    <div class="login_division_derecha">
+        <form id="login-form">
+        <div class="contenedor_login">
+            <h1>Login</h1>
+            <div class="campo_texto_salto">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="campo_texto_salto">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="boton_normal">Aceptar</button>
+        </div>
+        <div id="error-message"></div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        const API_URL = "{{ API_URL }}";
+    </script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+</body>
+
+</html>

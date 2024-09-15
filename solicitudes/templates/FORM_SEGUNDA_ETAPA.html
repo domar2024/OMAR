@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos_form_etapas.css' %}">
+{% endblock %}
+
+{% block title %}
+Form Publicidad
+{% endblock %}
+
+
+{% block content %}
+<p id="solicitud-id" display="none" style="font-size: 0;"></p>
+</h1>
+<h1 id="expediente-numero"></h1>
+
+<form id="avisomensura-form" class="formulario_salto_etapa">
+    <div class="campo_texto">
+        <label for="fecha-hora-mensura">Fecha y Hora Mensura:</label>
+        <input type="datetime-local" id="fecha-hora-mensura" required>
+    </div>
+    <div class="campo_texto">
+        <label for="fecha-autorizacion">Fecha Autorización:</label>
+        <input type="date" id="fecha-autorizacion" required>
+    </div>
+    <div class="campo_texto">
+        <label for="fecha-vencimiento">Fecha Vencimiento:</label>
+        <input type="date" id="fecha-vencimiento" required>
+    </div>
+    <input type="hidden" id="estatus" value="1">
+
+    <button class="boton_normal" type="submit">Enviar</button>
+</form>
+
+<div id="error-message" style="color: red;"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/form_segunda_etapa.js' %}"></script>
+{% endblock %}
